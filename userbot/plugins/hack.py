@@ -33,17 +33,17 @@ async def _(event):
 
         animation_chars = [
         
-            "`Connecting To Hacked Private Server...`",
-            "`Target Selected.`",
-            "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Hacking... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
-            "`Hacking... 100%\n█████████HACKED███████████ `",
-            "`Targeted Account Hacked...\n\nPay 69$ To` @A_Dark_Princ3 `Or send nudes of female Homo Sapiens To Remove This Hack`"
+            "Connessione a un Server Hackerato Privato...",
+            "Bersaglio selezionato.",
+            "Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+            "Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒",
+            "Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",    
+            "Hacking... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+            "Hacking... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+            "Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ ",
+            "Hacking... 84%\n█████████████████████▒▒▒▒ ",
+            "Hacking... 100%\n█████████HACKED███████████ ",
+            "Account selezionato HACKERATO\n\nPaga 69€ a` @V_SH4DOW_V `O manda nudes di ragazze o milf bone."
         ]
 
         for i in animation_ttl:
