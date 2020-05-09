@@ -38,24 +38,24 @@ async def _(event):
 
         animation_chars = [
         
-            "`Connecting To Telegram Headquarters...`",
-            "`Call Connected.`",
-            "`Telegram: Hello This is Telegram HQ. Who is this?`",
-            "`Me: Yo this is` @Dark_Princ3 ,`Please Connect me to my lil bro,Pavel Durov`",
-            "`User Authorised.`",
-            "`Calling Pavel Durov`  `At +916969696969`",
-            "`Private  Call Connected...`",
-            "`Me: Hello Sir, Please Ban This Telegram Account.`",    
-            "`Pavel: May I Know Who Is This?`",
-            "`Me: Yo Brah, I Am` @Dark_Princ3 ",
-            "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
-            "`Me: Thanks, See You Later Brah.`",
-            "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
-            "`Me: Is There Any Issue/Emergency???`",
-            "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-            "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-            "`Pavel: Sure Sur \nTC Bye Bye :)`",
-            "`Private Call Disconnected.`"
+            "Connettendomi ai ripetitori di Telegram...",
+            "Chiamata avviata.",
+            "Telegram: Ciao, questo è Telegram HQ. Chi è?",
+            "Me: Ciao, sono @V_SH4DOW_V , Per favore collegami al mio bro",
+            "Utente Autorizzato.",
+            "Chiamando lo sviluppatore di Telegram..",
+            "Chiamata Privata avviata...",
+            "Me: Hey, ciao, per favore banna sto account.",    
+            "Sviluppatore: Posso sapere, chi sei?",
+            "Me: Sono @V_SH4DOW_V, ti ricordi? ",
+            "Sviluppatore: O mio Dio, da quanto tempo, com'è...\nMi assicurerò personalmente che questo account venga bannanto entro 24h.",
+            "Me: Grazie tante",
+            "Sviluppatore: Non ringraziarmi, Telegram è nostro, chiamami quando sei libero.",
+            "Me: Perché? C'è qualche problema?",
+            "Sviluppatore: Si, c'è un problema in Telegram v69.6.9.\nNon riesco a fixarlo. Mi serve aiuto.",
+            "Me: Mandami l'app sul mio account Telegram, lo fixo e te lo mando.",
+            "Sviluppatore: Sicuro, va bene \nCi vediamo, ciao :)",
+            "Chiamata Privata Disattivata."
         ]
 
         for i in animation_ttl:
