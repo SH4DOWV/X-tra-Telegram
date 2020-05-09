@@ -31,9 +31,9 @@ async def _(event):
     temporary_variable_to_use = temp.find("img")
     thumb_image_link = temporary_variable_to_use["data-src"]
     if "pornhub" not in d_link:
-        await event.edit("` I need a link to download something pro.`**(._.)**")
+        await event.edit("Mi serve il link per scaricare qualcosa.**(._.)**")
     else:
-        await event.edit("**💦Preparing to upload Video💦 **\n**Title**:  `{}`\n**Total Views**: `{}`".format(title, views))
+        await event.edit("**💦Preparando il caricamento💦 **\n**Titolo**:  `{}`\n**Visualizzazioni**: `{}`".format(title, views))
     await asyncio.sleep(2)
     
 
@@ -42,7 +42,7 @@ async def _(event):
               await conv.send_message("/start")
               oop = await conv.get_response()
               if "language" in oop.text:
-                  await borg.send_message(event.chat_id, "**Please go to** @phsavebot **and select your language**")
+                  await borg.send_message(event.chat_id, "**Vai su** @phsavebot **e seleziona il tuo linguaggio**")
               await asyncio.sleep(2)
               me = await borg.get_me()
               my_id = me.id
@@ -56,7 +56,7 @@ async def _(event):
               response = await conv.get_response()
               if "Downloading" in response.text:
                   video_hehe = await conv.get_response()
-                  await borg.send_file(event.chat_id, video_hehe, caption="`🤤 Video Uploaded by` [@anubisxx](https://github.com/Dark-Princ3/X-tra-Telegram)!🤤\n**Title:** `{}`".format(title))
+                  await borg.send_file(event.chat_id, video_hehe, caption="🤤 Video Caricato da [@V_SH4DOW_V]🤤\n**Titolo:** `{}`".format(title))
               elif "Unfortunately" in response.text:
                   await event.edit("`Woops, Incorrect link!`\n**Please check and try again.**")
               elif "correct" in response.text:
