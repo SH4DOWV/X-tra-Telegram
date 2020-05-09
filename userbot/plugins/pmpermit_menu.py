@@ -28,26 +28,26 @@ async def _(event):
         if event.fwd_from:
             return
         if event.is_private:
-         Nudas = ("__Please state your gender.__\n"
-                  "`1`. Female Homo-Sapien\n"
-                  "`2`. Male Homo-Sapien\n"
-                  "`3`. Other\n")
-         PM = ("`Hello. You are accessing the availabe menu of my peru master,`"
+         Nudas = ("__Per favore, specifica il tuo genere.__\n"
+                  "`1`. Femmina\n"
+                  "`2`. Maschio\n"
+                  "`3`. Altro\n")
+         PM = ("Ciao. Stai entrando nel menù di, "
                f"{DEFAULTUSER}.\n"
-               "__Let's make this smooth and let me know why you are here.__\n"
-               "**Choose one of the following reasons why you are here:**\n\n"
-               "`1`. To chat with my master\n"
-               "`2`. To spam my master's inbox.\n"
-               "`3`. To send nudes.\n"
-               "`4`. To enquire something\n"
-               "`5`. To request something\n")
-         ONE = ("__Okay. Your request has been registered. Do not spam my master's inbox.You can expect a reply within 24 light years. He is a busy man, unlike you probably.__\n\n"
-                "**⚠️ You will be blocked and reported if you spam nibba. ⚠️**\n\n"
-                "__Use__ `/start` __to go back to the main menu.__")
-         TWO = (" `███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ `\n\n**So uncool, this is not your home. Go bother someone else. You have been blocked and reported until further notice.**")
-         FOUR = ("__Okay. My master has not seen your message yet.He usually responds to people,though idk about retarted ones.__\n __He'll respond when he comes back, if he wants to.There's already a lot of pending messages😶__\n **Please do not spam unless you wish to be blocked and reported.**")
-         FIVE = ("`Okay. please have the basic manners as to not bother my master too much. If he wishes to help you, he will respond to you soon.`\n**Do not ask repeatdly else you will be blocked and reported.**")
-         LWARN = ("**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n__Use__ `/start` __to go back to the main menu.__")
+               "__Facciamo veloce, e dimmi perché sei qui.__\n"
+               "**Scegli una delle seguenti motivazioni:**\n\n"
+               "`1`. Parlare con Shadow.\n"
+               "`2`. Spammare.\n"
+               "`3`. Mandare nudes.\n"
+               "`4`. Per giocare.\n"
+               "`5`. Per chiedere qualcosa.\n")
+         ONE = ("__Okay. La tua richiesta è stata registrata.__\n\n"
+                "**⚠️ Verrai bloccato e segnalato per spam se spammi più messaggi.. ⚠️**\n\n"
+                "__Usa__ `/start` __per tornare al menù.__")
+         TWO = (" `███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ `\n\n**Sfortunatamente, questa non è casa tua, e non ci sono tutti i piaceri. Non mandare nuovi messaggi o altro, fino a nuove notizie.**")
+         FOUR = ("__Okay. Shadow non ha ancora visto il tuo messaggio. Lui di solito, risponde, ma non so se risponde anche a rompicoglioni.__\n __Ritornerà presto e se vuole, ti risponderà. Ci sono già altri messaggi in attesa😶__\n **Per favore non spammare, se non vuoi essere bloccato.**")
+         FIVE = ("`Okay. Per favore, sì cortese e non tartassarlo di messaggi. Se lui vuole rispondere, ti risponderà presto.`\n**Non chiedere troppo o spammare, o verrai bloccato.**")
+         LWARN = ("**Questo è il tuo ultimo avvertimento. NON MANDARE altri messaggi. Si paziente. Shadow cercherà di risponderti il prima possibile.**\n__Usa__ `/start` __per tornare al menù.__")
      
         async with borg.conversation(chat) as conv:
          await borg.send_message(chat, PM)
@@ -55,7 +55,7 @@ async def _(event):
          response = await conv.get_response(chat)
          y = response.text
          if y == "1":
-             await borg.send_message(chat, ONE)
+             await borg.send_message(chat, ONE) 
              response = await conv.get_response(chat)
              await event.delete()
              if not response.text == "/start":
@@ -83,7 +83,7 @@ async def _(event):
              await response.delete()
              x = response.text
              if x == "1":
-                 await borg.send_message(chat, "`Oh my, you're very much welcome here ;).\nPlease drop your offerings and let my master judge if you have good heart <3.`\n\n **Please don't flood my inbox, we'll have a nice convo once i come back ;D**")
+                 await borg.send_message(chat, "`Oh cielo, sei la benvenuta qui ;).\nPer favore, lascia qui la tua offerta e fa sì che Shadow apprezzi il tuo gesto <3.`\n\n **Per favore, non spammare in chat, quando tornerà avrete una bella conversazione ;D**")
                  response = await conv.get_response(chat)
                  if not response.text == "/start":
                      await borg.send_message(chat, LWARN)
@@ -96,7 +96,7 @@ async def _(event):
                          await asyncio.sleep(3)
                          await event.client(functions.contacts.BlockRequest(chat_id))
              elif x == "2":
-                 await borg.send_message(chat, "**You nigga gay af to send a guy like my your male nudes. \nLeave immediately else you become the ultimate gayest gay the gay world has ever seen. I will reply you when i get online.**")
+                 await borg.send_message(chat, "**Seo un gay se vuoi lasciarmi i tuoi nudes qui. \nLascia la chat immediatamente o tu sarai il gay più gay che il mondo abbia mai visto. Ti risponderò quando tornerò online.**")
                  response = await conv.get_response(chat)
                  if not response.text == "/start":
                      await borg.send_message(chat, LWARN)
@@ -109,7 +109,7 @@ async def _(event):
                          await asyncio.sleep(3)
                          await event.client(functions.contacts.BlockRequest(chat_id))
              elif x == "3":
-                 await borg.send_message(chat, "`Please decide a gender for yourself before sending your nudes here,\n not that i'm judging if you're a helicopter or a banana but yeah, If you are anything else than a female Homo-Sapien,\n Do not send more messages and let my master see for himself if he wants to talk with you.`")
+                 await borg.send_message(chat, "`Per favore, decidi un sesso prima di inviare nudes qui,\n non quello, non sto giudicando se fai l'elicottero o hai la pesca, se sei qualcosa che non sia femmina,\n Non inviare altri messaggi e fa sì che sia lui a decidere se parlare con te.`")
                  response = await conv.get_response(chat)
                  if not response.text == "/start":
                      await borg.send_message(chat, LWARN)
@@ -122,7 +122,7 @@ async def _(event):
                          await asyncio.sleep(3)
                          await event.client(functions.contacts.BlockRequest(chat_id))
              else:
-                 await borg.send_message(chat, "__You have entered an invalid command. Please send__ `/start` __again or do not send another message if you do not wish to be blocked and reported.__")
+                 await borg.send_message(chat, "__Hai digitato un comando errato, per favore digita__ `/start` __di nuovo sennò non inviare altri messaggi, o rischierai di essere bloccato.__")
                  response = await conv.get_response(chat)
                  if not response.text.startswith("/start"):
                      await borg.send_message(chat, TWO)
@@ -152,7 +152,7 @@ async def _(event):
                      await asyncio.sleep(3)
                      await event.client(functions.contacts.BlockRequest(chat_id))
          else:
-             await borg.send_message(chat, "`You have entered an invalid command. Please send /start again or do not send another message if you do not wish to be blocked and reported.`")
+             await borg.send_message(chat, "`Hai digitato un comando errato, per favore digita /start di nuovo sennò non inviare altri messaggi, o rischierai di essere bloccato.`")
              response = await conv.get_response(chat)
              z = response.text
              if not z == "/start":
