@@ -61,7 +61,7 @@ async def meme(event):
     await asyncio.sleep(sleepValue)
         
 
-   @register(pattern='.type(?: |$)(.*)')
+   @borg.on(pattern=r"\.type", outgoing=True)
 @errors_handler
 async def typewriter(typew):
     """ Just a small command to make your keyboard become a typewriter! """
@@ -89,7 +89,7 @@ async def typewriter(typew):
             await typew.edit(old_text)
             await asyncio.sleep(sleep_time)
 
-@register(outgoing=True, pattern="^.bt$")
+@borg.on(outgoing=True, pattern=r"\.bt")
 @errors_handler
 async def bluetext(bt_e):
     """ Believe me, you will find this useful. """
@@ -99,7 +99,7 @@ async def bluetext(bt_e):
                 "`TESTO BLU, BASTA CLICCARE.`\n"
                 "`Sei uno stupido animale attratto dai colori?`")
  
-@register(outgoing=True, pattern="^.bm(?: |$)(.*)")
+@borg.on(outgoing=True, pattern=r"\.bm")
 @errors_handler
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
@@ -125,7 +125,7 @@ async def spongemocktext(mock):
         await mock.edit("".join(reply_text))
 
 
-@register(outgoing=True, pattern="^.str(?: |$)(.*)")
+@borg.on(outgoing=True, pattern=r"\.str")
 @errors_handler
 async def stretch(stret):
     """ Stretch it."""
@@ -148,7 +148,7 @@ async def stretch(stret):
         await stret.edit(reply_text)
 
 
-@register(outgoing=True, pattern="^.vpr(?: |$)(.*)")
+@borg.on(outgoing=True, pattern=r"\.vpr")
 @errors_handler
 async def vapor(vpr):
     """ Vaporize everything! """
