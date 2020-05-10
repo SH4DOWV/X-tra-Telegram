@@ -12,12 +12,12 @@ CACHE = {}
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No name set yet nibba, check pinned message in** @XtraTgBot"
-USER_BOT_WARN_ZERO = "Stai scrivendo a Shadow, senza permesso, ciò ha attivato un processo di sicurezza -_-, non scrivere più di 4 messaggi o verrai bloccato.\n\n"
+USER_BOT_WARN_ZERO = "**Stai scrivendo a** {DEFAULTUSER}, **senza permesso**, ciò ha attivato un **processo di sicurezza -_-**, **non scrivere più di 5 messaggi o verrai bloccato**.\n\n"
 USER_BOT_NO_WARN = ("[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id=742506768)\n\n"
-                    "Ciao, questo è un processo di sicurezza contro rompicoglioni, se non sei uno di loro ti autorizzerò a scrivermi."
-                    f"Questa è la chat privata di Shadow.\n\n"
-                    "Lascia il tuo nome, numero di telefono, qualche migliaio di € e forse ti risponderò entro quest'anno\n\n"
-                    "** Manda* `/start` ** così posso sapere perché sei qui.**")
+                    "Ciao, questo è un **processo di sicurezza** contro rompicoglioni, se non sei uno di loro ti autorizzerò a scrivermi."
+                    f"Questa è la **chat privata di** {DEFAULTUSER}.\n\n"
+                    "Lascia il tuo nome, numero di telefono, qualche migliaio di € e forse ti risponderò entro quest'anno.\n\n"
+                    "** Manda** `/start` ** così posso sapere perché sei qui.**")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -37,7 +37,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Approved Nibba [{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("Approvato [{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -51,7 +51,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
                     pmpermit_sql.approve(chat.id, "outgoing")
-                    bruh = "__Added user to approved pms cuz outgoing message >~<__"
+                    bruh = "__Utente approvato a scrivermi in Privato__"
                     rko = await borg.send_message(event.chat_id, bruh)
                     await asyncio.sleep(3)
                     await rko.delete()
@@ -95,7 +95,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="Autorizzato a scrivermi",
+                    caption="**Autorizzato a scrivermi**",
                     reply_to=event
                 )
                 await event.delete()
