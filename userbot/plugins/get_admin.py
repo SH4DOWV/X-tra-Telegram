@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Admins in this Channel**: \n"
+    mentions = "**Admin nel gruppo**: \n"
     should_mention_admins = False
     reply_message = None
     pattern_match_str = event.pattern_match.group(1)
@@ -23,7 +23,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions_heading = "Admins in {} channel: \n".format(input_str)
+        mentions_heading = "Admin nel {} gruppo: \n".format(input_str)
         mentions = mentions_heading
         try:
             chat = await borg.get_entity(input_str)
