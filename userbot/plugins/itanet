@@ -1,6 +1,6 @@
 """Emoji
 Available Commands:
-.ding"""
+.itanet"""
 
 from telethon import events
 
