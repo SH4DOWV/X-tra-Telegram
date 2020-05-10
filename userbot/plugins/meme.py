@@ -89,15 +89,7 @@ async def typewriter(typew):
             await typew.edit(old_text)
             await asyncio.sleep(sleep_time)
 
-@borg.on(outgoing=True, pattern=r"\.bt")
-@errors_handler
-async def bluetext(bt_e):
-    """ Believe me, you will find this useful. """
-    if not bt_e.text[0].isalpha() and bt_e.text[0] not in ("/", "#", "@", "!"):
-        if await bt_e.get_reply_message():
-            await bt_e.edit(
-                "`TESTO BLU, BASTA CLICCARE.`\n"
-                "`Sei uno stupido animale attratto dai colori?`")
+     
  
 @borg.on(outgoing=True, pattern=r"\.bm")
 @errors_handler
@@ -125,27 +117,6 @@ async def spongemocktext(mock):
         await mock.edit("".join(reply_text))
 
 
-@borg.on(outgoing=True, pattern=r"\.str")
-@errors_handler
-async def stretch(stret):
-    """ Stretch it."""
-    if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@",
-                                                             "!"):
-        textx = await stret.get_reply_message()
-        message = stret.text
-        message = stret.pattern_match.group(1)
-        if message:
-            pass
-        elif textx:
-            message = textx.text
-        else:
-            await stret.edit("`GiiiiiiiB sooooooomeeeeeee teeeeeeext!`")
-            return
-
-        count = random.randint(3, 10)
-        reply_text = re.sub(r"([aeiouAEIOUａｅｉｏｕＡＥＩＯＵаеиоуюяыэё])",
-                            (r"\1" * count), message)
-        await stret.edit(reply_text)
 
 
 @borg.on(outgoing=True, pattern=r"\.vpr")
