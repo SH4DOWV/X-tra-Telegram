@@ -61,7 +61,7 @@ async def meme(event):
     await asyncio.sleep(sleepValue)
         
 
-   @borg.on(pattern=r"\.type", outgoing=True)
+   @borg.on(pattern=r"\.type")
 @errors_handler
 async def typewriter(typew):
     """ Just a small command to make your keyboard become a typewriter! """
