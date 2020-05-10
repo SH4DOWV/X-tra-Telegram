@@ -96,7 +96,7 @@ async def _(event):
                          await asyncio.sleep(3)
                          await event.client(functions.contacts.BlockRequest(chat_id))
              elif x == "2":
-                 await borg.send_message(chat, "**Seo un gay se vuoi lasciarmi i tuoi nudes qui. \nLascia la chat immediatamente o tu sarai il gay più gay che il mondo abbia mai visto. Ti risponderò quando tornerò online.**")
+                 await borg.send_message(chat, "**Sei un gay se vuoi lasciarmi i tuoi nudes qui. \nLascia la chat immediatamente o tu sarai il gay più gay che il mondo abbia mai visto. Ti risponderò quando tornerò online.**")
                  response = await conv.get_response(chat)
                  if not response.text == "/start":
                      await borg.send_message(chat, LWARN)
