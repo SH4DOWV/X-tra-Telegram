@@ -23,13 +23,13 @@ async def _(event):
             if currency_to in current_response["rates"]:
                 current_rate = float(current_response["rates"][currency_to])
                 rebmun = round(number * current_rate, 2)
-                await event.edit("**According to current rates,**\n {} **{}** = {} **{}**\n \n●▬▬▬▬▬ஜ۩❀۩ஜ▬▬▬▬▬●\n\n**Current Conversion Rates:**\n 1 **{}** = {} **{}**".format(number, currency_from, rebmun, currency_to, currency_from, current_rate, currency_to))
+                await event.edit("**Guardando le valute,**\n {} **{}** = {} **{}**\n \n●▬▬▬▬▬ஜ۩❀۩ஜ▬▬▬▬▬●\n\n**Valute correnti:**\n 1 **{}** = {} **{}**".format(number, currency_from, rebmun, currency_to, currency_from, current_rate, currency_to))
             else:
-                await event.edit("Welp, Hate to tell yout this but this Currency isn't supported **yet**.\n__Try__ `.currencies` __for a list of supported currencies.__")
+                await event.edit("Odioso dirlo, ma questa valuta non è usabile **per ora**.\n__Prova__ `.currencies` __per una lista di valute supportate.__")
         except e:
             await event.edit(str(e))
     else:
-        await event.edit("**Syntax:**\n.currency amount from to\n**Example:**\n`.currency 10 usd inr`")
+        await event.edit("**Syntax:**\n.currency numero da a\n**Esempio:**\n`.currency 10 usd inr`")
     end = datetime.now()
     ms = (end - start).seconds
 
@@ -42,4 +42,4 @@ async def list(ups):
     current_response = requests.get(request_url).json()
     dil_wale_puch_de_na_chaaa = current_response["rates"]
     for key, value in dil_wale_puch_de_na_chaaa.items():
-        await borg.send_message(ups.chat_id, "**List of currencies:**\n {}\n*Tip:** Use `.gs` currency_code for more details on the currency.".format(key))
+        await borg.send_message(ups.chat_id, "**Lista delle valute supportate:**\n {}\n*Tip:** Usa `.gs` currency_code per più dettagli sulle valute.".format(key))
