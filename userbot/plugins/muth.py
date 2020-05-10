@@ -1,6 +1,6 @@
 """
 Available Commands
-.muth"""
+.sega"""
 
 from telethon import events
 
@@ -24,7 +24,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "muth":
+    if input_str == "sega":
 
         await event.edit(input_str)
 
