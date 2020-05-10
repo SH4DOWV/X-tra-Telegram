@@ -10,30 +10,30 @@ async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit("```Reply to any user message.```")
+       await event.edit("```Rispondi a qualunque messaggio.```")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.media:
-       await event.edit("```reply to a media message```")
+       await event.edit("```rispondi ad un messaggio contenente media```")
        return
     chat = "@DrWebBot"
     sender = reply_message.sender
     if reply_message.sender.bot:
-       await event.edit("```Reply to actual users message.```")
+       await event.edit("```Rispondi a messaggi di persone attuali.```")
        return
-    await event.edit(" `Sliding my tip, of fingers over it`")
+    await event.edit(" `Facendomi scivolare la punta delle dita sopra`")
     async with borg.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=161163358))
               await borg.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+              await event.reply("```Per favore, sblocca @sangmatainfo_bot.```")
               return
           if response.text.startswith("Forward"):
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
+             await event.edit("```Per favore, puoi disattivare la privacy di inoltro, per piacere?```")
           else:
           	if response.text.startswith("Select"):
-          		await event.edit("`Please go to` @DrWebBot `and select your language.`") 
+          		await event.edit("`Per favore, vai da @DrWebBot e seleziona un linguaggio.`") 
           	else: 
-          			await event.edit(f"**Antivirus scan was completed. I got dem final results.**\n {response.message.message}")
+          			await event.edit(f"**Scansione AntiVirus completata. Ho i risultati finali.**\n {response.message.message}")
