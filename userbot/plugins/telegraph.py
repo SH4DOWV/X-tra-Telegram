@@ -25,7 +25,7 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     await borg.send_message(
         Config.PRIVATE_GROUP_BOT_API_ID,
-        "Created New Telegraph account {} for the current session. \n**Do not give this url to anyone, even if they say they are from Telegram!**".format(auth_url)
+        "Creato un nuovo Telegraph account {} per la seguente sessione. \n**Non dare questo URL a nessuno**".format(auth_url)
     )
     optional_title = event.pattern_match.group(2)
     if event.reply_to_msg_id:
@@ -39,7 +39,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await event.edit("Downloaded to {} in {} seconds.".format(downloaded_file_name, ms))
+            await event.edit("Scaricato come {} in {} secondi.".format(downloaded_file_name, ms))
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
             try:
@@ -52,7 +52,7 @@ async def _(event):
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await event.edit("Uploaded to https://telegra.ph{} in {} seconds.".format(media_urls[0], (ms + ms_two)), link_preview=True)
+                await event.edit("Caricato su https://telegra.ph{} in {} secondi.".format(media_urls[0], (ms + ms_two)), link_preview=True)
         elif input_str == "text":
             user_object = await borg.get_entity(r_message.from_id)
             title_of_page = user_object.first_name # + " " + user_object.last_name
@@ -80,7 +80,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await event.edit("Pasted to https://telegra.ph/{} in {} seconds.".format(response["path"], ms), link_preview=True)
+            await event.edit("Copiato su https://telegra.ph/{} in {} secondi.".format(response["path"], ms), link_preview=True)
     else:
         await event.edit("Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)")
 
