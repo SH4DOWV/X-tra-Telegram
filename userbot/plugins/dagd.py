@@ -19,9 +19,9 @@ async def _(event):
     sample_url = "https://da.gd/dns/{}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("DNS records of {} are \n{}".format(input_str, response_api))
+        await event.edit("I registri DNS di {} sono \n{}".format(input_str, response_api))
     else:
-        await event.edit("i can't seem to find {} on the internet".format(input_str))
+        await event.edit("non riesco a trovare {} su internet".format(input_str))
 
 
 @borg.on(admin_cmd("url (.*)"))
@@ -32,9 +32,9 @@ async def _(event):
     sample_url = "https://da.gd/s?url={}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("Generated {} for {}.".format(response_api, input_str))
+        await event.edit("Generato {} per {}.".format(response_api, input_str))
     else:
-        await event.edit("something is wrong. please try again later.")
+        await event.edit("Qualcosa è andato storto, riprova più tardi.")
 
 
 @borg.on(admin_cmd("unshort (.*)"))
@@ -48,4 +48,4 @@ async def _(event):
     if str(r.status_code).startswith('3'):
         await event.edit("Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Location"]))
     else:
-        await event.edit("Input URL {} returned status_code {}".format(input_str, r.status_code))
+        await event.edit("Input URL {} ritorno status_code {}".format(input_str, r.status_code))
