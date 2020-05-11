@@ -11,8 +11,9 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No Name set yet.** [Check Gu
 @command(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    await alive.edit("UserBot Online!✔️\n\n"
-                     "Versione Python📟: 3.7.3\n")
+    await alive.edit("UBot Online!✔️\n\n"
+                     "ℹ️UserBot creato da @V_SHADOW_V\n\n"
+                     "Chiedetemi, primi di scrivermi in privata.")
                      # Don't change this else you a TikTok loser, Son of Jinping. Add your own.
                      
                     
