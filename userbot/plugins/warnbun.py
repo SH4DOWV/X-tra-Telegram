@@ -9,7 +9,8 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`You Have  1/3  warnings...\nWatch out!....\nReason for warn: Porn Demand`"
+    input_str = event.pattern_match.group(1)
+    mentions = "`📕Hai  1/3  warn...\n⚠️Attenzione!....\n📝Motivo del warn: {input_str}`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -32,7 +33,8 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`You Have  2/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand`"
+    input_str = event.pattern_match.group(1)
+    mentions = "`📕Hai 2/3  warn...\n⚠️ Attenzione!....\n📝Motivo del warn: {input_str} `"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -55,7 +57,8 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`You Have  3/3  warnings...\nBanned!!!....\nReason for ban: Porn Demand`"
+    input_str = event.pattern_match.group(1)
+    mentions = "`📕Hai  3/3  warn...\n🚫Bannato!!!....\n📝Motivo del ban: {input_str} `"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -78,7 +81,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`Warning Resetted By Admin...\nYou Have  0/3  warnings`"
+    mentions = "`🗒️Warn resettati dall'Admin...\n📕Hai  0/3  warn.`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -95,7 +98,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Warning..\n\nBattery Below 10%, Please Charge Your Phone**"
+    mentions = "**⚠️Attenzione⚠️\n\n🔋Batteria sotto il 10%, Per Favore metti a ricaricare il tuo telefono 📲**"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -111,7 +114,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`U Got A FloodWait:\nReason:telethon.errors.rpcerrorlist.FloodWaitError: A wait of 546578265716823 seconds is required (caused by EditMessageRequest)`"
+    mentions = "`🔈Sei stato mutato per Flood:\n📝Motivo del mute: Mutato perché flood di cazzate⚠️`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
