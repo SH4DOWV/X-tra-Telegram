@@ -45,7 +45,7 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await borg.send_message(event.chat_id, f"**Sto andando AFK!** __motivo ~ {reason}__")
+            await borg.send_message(event.chat_id, f"**👤Sto andando AFK!**\n\n**📄Motivo**: {reason}")
         else:
             await borg.send_message(event.chat_id, f"**Sono AFK!**")
         await asyncio.sleep(5)
@@ -72,11 +72,11 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        shite = await borg.send_message(event.chat_id, "__Sono tornato!__\n**Non sono più AFK.**\n `Ero AFK per:``" + total_afk_time + "`")
+        shite = await borg.send_message(event.chat_id, "**💫Sono tornato!**\n\n**❌Non sono più AFK.**\n\n ⏱️Ero **AFK** per:`" + total_afk_time + "`")
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "Set AFK mode to False"
+                "**✖️AFK disattivato**"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
@@ -145,10 +145,10 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **fa**"
         msg = None
-        message_to_reply = f"__Sono AFK da__ `{total_afk_time}`\nDove sono: ~~SOLO DIO LO SA~~ " + \
-            f"\n\n__Prometto di tornare entro quest'anno__\n**MOTIVO**: {reason}" \
+        message_to_reply = f"**⚠️Sono AFK da** `{total_afk_time}`\n\n🔭Dove sono: ~~SOLO DIO LO SA~~ " + \
+            f"\n\n**📌Prometto di tornare entro quest'anno.**\n\n**MOTIVO**: {reason}" \
             if reason \
-            else f"**Hey!**\n__Scusami ma non ci sono al momento. Da quanto, ti chiederai? Da {total_afk_time} Credo.__\n\nQuando tornerò? ~~Tra qualche ora~~ __Quando io ne avrò voglia__**( ಠ ʖ̯ ಠ)**  "
+            else f"**Hey!**\n\n**📴Scusami ma non ci sono al momento.**\n\n Da quanto, ti chiederai? __Da {total_afk_time} Credo.__\n\n**⏰Quando tornerò?** __Tra qualche ora, ritornerò, oppure quando ne avrò voglia.😊__**( ಠ ʖ̯ ಠ)**  "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
