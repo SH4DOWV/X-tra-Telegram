@@ -19,7 +19,7 @@ async def _(event):
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, True)
         await event.edit(
-            "Locked {}".format(input_str)
+            "Bloccati {}".format(input_str)
         )
     else:
         msg = None
@@ -78,7 +78,7 @@ async def _(event):
             await event.edit(str(e))
         else:
             await event.edit(
-                "Current Chat Default Permissions Changed Successfully, in API"
+                "Permessi Del Gruppo cambiati con Successo, in API"
             )
 
 
@@ -91,11 +91,11 @@ async def _(event):
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, False)
         await event.edit(
-            "UnLocked {}".format(input_str)
+            "Sbloccati {}".format(input_str)
         )
     else:
         await event.edit(
-            "Use `.lock` without any parameters to unlock API locks"
+            "Usa `.lock` senza parametri per sbloccare tutto in API"
         )
 
 
@@ -108,7 +108,7 @@ async def _(event):
     if not current_db_locks:
         res = "There are no DataBase locks in this chat"
     else:
-        res = "Following are the DataBase locks in this chat: \n"
+        res = "Questi sono i blocchi contenuti nella chat nel DataBase: \n"
         res += "👉 `bots`: `{}`\n".format(current_db_locks.bots)
         res += "👉 `commands`: `{}`\n".format(current_db_locks.commands)
         res += "👉 `email`: `{}`\n".format(current_db_locks.email)
@@ -120,7 +120,7 @@ async def _(event):
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\nFollowing are the API locks in this chat: \n"
+        res += "\nQuesti sono i blocchi contenuti nella chat in API: \n"
         res += "👉 `msg`: `{}`\n".format(current_api_locks.send_messages)
         res += "👉 `media`: `{}`\n".format(current_api_locks.send_media)
         res += "👉 `sticker`: `{}`\n".format(current_api_locks.send_stickers)
@@ -151,7 +151,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non ho i permessi da **admin** qui. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "commands", False)
     if is_locked(peer_id, "forward"):
@@ -160,7 +160,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non ho i permessi da **admin** qui. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "forward", False)
     if is_locked(peer_id, "email"):
@@ -175,7 +175,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non ho i permessi da **admin** qui. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "email", False)
     if is_locked(peer_id, "url"):
@@ -190,7 +190,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non ho i permessi da **admin** qui. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "url", False)
 
@@ -222,11 +222,11 @@ async def _(event):
                         ))
                     except Exception as e:
                         await event.reply(
-                            "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                            "Non ho i permessi da **admin** qui. \n`{}`".format(str(e))
                         )
                         update_lock(event.chat_id, "bots", False)
                         break
             if Config.G_BAN_LOGGER_GROUP is not None and is_ban_able:
                 ban_reason_msg = await event.reply(
-                    "!warn [user](tg://user?id={}) Please Do Not Add BOTs to this chat.".format(users_added_by)
+                    "!warn [user](tg://user?id={}) Per favore, non aggiungere bot nel gruppo.".format(users_added_by)
                 )
