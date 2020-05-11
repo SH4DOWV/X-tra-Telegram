@@ -56,11 +56,11 @@ async def _(event):
     if msg and msg.media:
         bot_api_file_id = pack_bot_file_id(msg.media)
         add_welcome_setting(event.chat_id, msg.message, True, 0, bot_api_file_id)
-        await event.edit("Messaggio di benvenuto, salvato. ")
+        await event.edit("📝Messaggio di benvenuto, salvato. ")
     else:
         input_str = event.text.split(None, 1)
         add_welcome_setting(event.chat_id, input_str[1], True, 0, None)
-        await event.edit("Messaggio di benvenuto, non salvato. ")
+        await event.edit("📝Messaggio di benvenuto, salvato. ")
 
 
 @command(pattern="^.clearwelcome")  # pylint:disable=E0602
@@ -70,7 +70,7 @@ async def _(event):
     cws = get_current_welcome_settings(event.chat_id)
     rm_welcome_setting(event.chat_id)
     await event.edit(
-        "WMessaggio di benvenuto, cancellato. " + \
+        "🗑️Messaggio di benvenuto, cancellato. " + \
         "Il vecchio messaggio di benvenuto era `{}`.".format(cws.custom_welcome_message)
     )
 
@@ -81,10 +81,10 @@ async def _(event):
     cws = get_current_welcome_settings(event.chat_id)
     if hasattr(cws, 'custom_welcome_message'):
         await event.edit(
-            "Messaggio di benvenuto, trovato. " + \
-        "Il tuo messaggio di benvenuto è\n\n`{}`.".format(cws.custom_welcome_message)
+            "🔍Messaggio di benvenuto, trovato. " + \
+        "🗃️Il tuo messaggio di benvenuto è\n\n`{}`.".format(cws.custom_welcome_message)
     )
     else:
         await event.edit(
-            "Nessun messaggio di benvenuto, trovato"
+            "📭Nessun messaggio di benvenuto, trovato"
         )
