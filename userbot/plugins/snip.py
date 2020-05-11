@@ -67,20 +67,20 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_snip(name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit("snip {name} saved successfully. Get it with #{name}".format(name=name))
+        await event.edit("Taglio {name} salvato con successo. Prendilo con #{name}".format(name=name))
     else:
-        await event.edit("Reply to a message with `snips keyword` to save the snip")
+        await event.edit("Rispondi ad un messaggio con `snips parola` per salvare il taglio.")
 
 
 @borg.on(admin_cmd("snipl"))
 async def on_snip_list(event):
     all_snips = get_all_snips()
-    OUT_STR = "Available Snips:\n"
+    OUT_STR = "Tagli Disponibili:\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
             OUT_STR += f"👉 #{a_snip.snip} \n"
     else:
-        OUT_STR = "No Snips. Start Saving using `.snips`"
+        OUT_STR = "Nessun Taglio. Incomincia a salvarli con `.snips`"
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
@@ -89,7 +89,7 @@ async def on_snip_list(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Available Snips",
+                caption="Tagli Disponibili",
                 reply_to=event
             )
             await event.delete()
@@ -101,4 +101,4 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
-    await event.edit("snip #{} deleted successfully".format(name))
+    await event.edit("Taglio #{} cancellato con successo".format(name))
