@@ -65,7 +65,7 @@ async def _(event):
         #if userid == 719877937:
         #    packshortname = "TheAnubis_Animated"
         #else:
-        packshortname = f"{user.id}'s_animated_{pack}" # format: Uni_Borg_userid
+        packshortname = f"shadowz_animated_{pack}" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Tipo di messaggio di non valido.")
         return
@@ -144,7 +144,7 @@ async def _(event):
                         response = await silently_send_message(bot_conv, packname)
                         if not response.text.startswith("Ok!"):
                             if "unacceptable" in response.text:
-                                packname = f"{user.id}'s @XtraTgBot Vol.{pack}"
+                                packname = f"Pack di {user.id}Vol.{pack}"
                                 response = await silently_send_message(bot_conv, packname)
                             else:
                                 await event.edit(f"**ERRORE**! @Stickers ha risposto: {response.text}")
@@ -193,7 +193,7 @@ async def _(event):
 
 
     await event.edit(f"**Preso!** `Questo Sticker è stato preso e messo` [qui](t.me/addstickers/{packshortname}), pack{pack}"
-                     f" `da` {DEFAULTUSER}\n**ᕦ(ò_óˇ)ᕤ**")
+                     f" `di` {DEFAULTUSER}\n**ᕦ(ò_óˇ)ᕤ**")
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
