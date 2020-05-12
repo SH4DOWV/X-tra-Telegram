@@ -83,7 +83,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})".format(firstname, chat.id) "per {a_user.reason}\n"
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={}).format(firstname, chat.id) per {a_user.reason}\n"
                 else:
                     APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})\n".format(firstname, chat.id)
         else:
