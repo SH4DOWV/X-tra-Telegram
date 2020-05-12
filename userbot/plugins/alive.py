@@ -13,7 +13,7 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("UBot Online!✔️\n\n"
                      "ℹ️UserBot creato da @V_SHADOW_V\n\n"
-                     "Chiedetemi, primi di scrivermi in privata.")
+                     "Chiedetemi, prima di scrivermi in privata.")
                      # Don't change this else you a TikTok loser, Son of Jinping. Add your own.
                      
                     
