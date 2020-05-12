@@ -78,15 +78,15 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def approve_p_m(event):
         if event.fwd_from:
             return
+        nome = str(event.chat_id)
         approved_users = pmpermit_sql.get_all_approved()
         APPROVED_PMs = "Lista degli autorizzati a scrivermi\n"
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})".format(chat.id)\n
-                                    f"per {a_user.reason}"
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={nome})\nper {a_user.reason}."
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})".format(chat.id)
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={nome})"
         else:
             APPROVED_PMs = "Nessuno autorizzato, per ora"
         if len(APPROVED_PMs) > 4095:
