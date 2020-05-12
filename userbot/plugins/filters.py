@@ -84,20 +84,20 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit(f"filter {name} saved successfully. Get it with {name}")
+        await event.edit(f"📚Filtro {name} salvato con successo.\n Prendilo con {name}")
     else:
-        await event.edit("Reply to a message with `savefilter keyword` to save the filter")
+        await event.edit("🖊️Rispondi ad un messaggio con  `savefilter parola` per salvare il filtro.")
 
 
 @command(pattern="^.listfilters$")
 async def on_snip_list(event):
     all_snips = get_all_filters(event.chat_id)
-    OUT_STR = "Available Filters in the Current Chat:\n"
+    OUT_STR = "📄Filtri Disponibili in Questo Gruppo:\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
             OUT_STR += f"👉 {a_snip.keyword} \n"
     else:
-        OUT_STR = "No Filters. Start Saving using `.savefilter`"
+        OUT_STR = "📭No Filtri. Incomincia a salvarli con `.savefilter`"
     if len(OUT_STR) > 4096:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "filters.text"
@@ -106,7 +106,7 @@ async def on_snip_list(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Available Filters in the Current Chat",
+                caption="📄Filtri Disponibili in Questo Gruppo.",
                 reply_to=event
             )
             await event.delete()
@@ -118,10 +118,10 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_filter(event.chat_id, name)
-    await event.edit(f"filter {name} deleted successfully")
+    await event.edit(f"Filtro {name} eliminato con successo.🗑️")
 
 
 @command(pattern="^.clearallfilters$")
 async def on_all_snip_delete(event):
     remove_all_filters(event.chat_id)
-    await event.edit(f"filters **in current chat** deleted successfully")
+    await event.edit(f"Filtri **in questo gruppo** eliminati con successo.🗑️")
