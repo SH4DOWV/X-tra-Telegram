@@ -3,6 +3,7 @@ import io
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon import events, errors, functions, types
+from telethon.tl.types import User
 from userbot import ALIVE_NAME, LESS_SPAMMY
 from userbot.utils import admin_cmd
 
@@ -50,7 +51,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             if not pmpermit_sql.is_approved(chat.id):
                 if not chat.id in PM_WARNS:
-                    pmpermit_sql.approve(chat.id, "outgoing")
+                    pmpermit_sql.approve(chat.id, "Mandato per primo.")
                     bruh = "__Utente approvato a scrivermi in Privato__"
                     rko = await borg.send_message(event.chat_id, bruh)
                     await asyncio.sleep(3)
@@ -82,9 +83,9 @@ if Var.PRIVATE_GROUP_ID is not None:
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})".format(firstname, chat.id) "per {a_user.reason}\n"
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={})\n".format(firstname, chat.id)
         else:
             APPROVED_PMs = "Nessuno autorizzato, per ora"
         if len(APPROVED_PMs) > 4095:
