@@ -9,8 +9,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
-    mentions = "`📕Hai  1/3  warn...\n⚠️Attenzione!....\n📝Motivo del warn: {input_str}`"
+    mentions = f"`📕Hai  1/3  warn.`\n**⚠️Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -33,8 +32,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
-    mentions = "`📕Hai 2/3  warn...\n⚠️ Attenzione!....\n📝Motivo del warn: {input_str} `"
+    mentions = f"`📕Hai 2/3  warn.`\n**⚠️ Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -57,8 +55,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
-    mentions = "`📕Hai  3/3  warn...\n🚫Bannato!!!....\n📝Motivo del ban: {input_str} `"
+    mentions = "`📕Hai  3/3  warn.`\n**🚫Bannato!\n📝Motivo del ban:** `{}`".format(event.pattern_match.group(1))
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -81,7 +78,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`🗒️Warn resettati dall'Admin...\n📕Hai  0/3  warn.`"
+    mentions = "`🗒️Warn resettati dall'Admin.`\n**📕Hai  0/3  warn.**"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -114,7 +111,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`🔈Sei stato mutato per Flood:\n📝Motivo del mute: Mutato perché flood di cazzate⚠️`"
+    mentions = "`🔈Sei stato mutato per Flood`\n**📝Motivo del mute: Mutato perché flood di cazzate⚠️**"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
