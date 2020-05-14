@@ -25,7 +25,7 @@ async def on_new_message(event):
             try:
                 await event.delete()
             except Exception as e:
-                await event.reply("I do not have DELETE permission in this chat")
+                await event.reply("**Non ho i permessi di CANCELLARE in questa chat.**")
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
             break
 
@@ -36,18 +36,18 @@ async def on_add_black_list(event):
     to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
     for trigger in to_blacklist:
         sql.add_to_blacklist(event.chat_id, trigger.lower())
-    await event.edit("Added {} triggers to the blacklist in the current chat".format(len(to_blacklist)))
+    await event.edit("**Aggiunti {} trigger in questa chat.**".format(len(to_blacklist)))
 
 
 @borg.on(admin_cmd("listblacklist"))
 async def on_view_blacklist(event):
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
-    OUT_STR = "Blacklists in the Current Chat:\n"
+    OUT_STR = "**Blacklist in questa chat:\n"
     if len(all_blacklisted) > 0:
         for trigger in all_blacklisted:
             OUT_STR += f"👉 {trigger} \n"
     else:
-        OUT_STR = "No BlackLists. Start Saving using `.addblacklist`"
+        OUT_STR = "**No BlackList. Incomincia a salvarli con** `.addblacklist`"
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "blacklist.text"
@@ -56,7 +56,7 @@ async def on_view_blacklist(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="BlackLists in the Current Chat",
+                caption="**BlackList in questa chat.**",
                 reply_to=event
             )
             await event.delete()
@@ -72,4 +72,4 @@ async def on_delete_blacklist(event):
     for trigger in to_unblacklist:
         if sql.rm_from_blacklist(event.chat_id, trigger.lower()):
             successful += 1
-    await event.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
+    await event.edit(f"**Rimosso {successful} / {len(to_unblacklist)} dalla blacklist.")
