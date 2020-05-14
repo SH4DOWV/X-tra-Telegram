@@ -89,7 +89,7 @@ async def fetch_info(chat, event):
     try:
         dc_id, location = get_input_location(chat.full_chat.chat_photo)
     except Exception as e:
-        dc_id = "Sconosciuto
+        dc_id = "Sconosciuto"
         location = str(e)
     
     #this is some spaghetti I need to change
