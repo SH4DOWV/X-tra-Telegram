@@ -37,8 +37,6 @@ async def _(event):
         mentions += " " + str(e) + "\n"
     await event.edit(mentions)
 
- from userbot.utils import admin_cmd
-
 
 @borg.on(admin_cmd("get_id"))
 async def _(event):
