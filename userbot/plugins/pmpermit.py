@@ -17,8 +17,8 @@ USER_BOT_WARN_ZERO = "**Stai scrivendo a** {DEFAULTUSER}, **senza permesso**, ci
 USER_BOT_NO_WARN = ("[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id=742506768)\n\n"
                     "Ciao, questo è un **processo di sicurezza** contro rompicoglioni, se non sei uno di loro ti autorizzerò a scrivermi."
                     f"Questa è la **chat privata di** {DEFAULTUSER}.\n\n"
-                    "Lascia il tuo nome, numero di telefono, qualche migliaio di € e forse ti risponderò entro quest'anno.\n\n"
-                    "** Manda** `/start` ** così posso sapere perché sei qui.**")
+                    "Lascia il tuo nome, numero di telefono, qualche migliaio di € e forse ti risponderò entro quest'anno.\n\n")
+                    
 
 
 if Var.PRIVATE_GROUP_ID is not None:
