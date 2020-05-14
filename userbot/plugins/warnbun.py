@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = f"`📕Hai  1/3  warn.`\n**⚠️Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
+    mentions = "`📕Hai  1/3  warn.`\n**⚠️Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -32,7 +32,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = f"`📕Hai 2/3  warn.`\n**⚠️ Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
+    mentions = "`📕Hai 2/3  warn.`\n**⚠️ Attenzione!\n📝Motivo del warn:** `{}`".format(event.pattern_match.group(1))
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
