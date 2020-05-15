@@ -44,18 +44,18 @@ async def _(event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "Need a Profile Picture to check **this**"
+        dc_id = "**Serve una foto profilo per vedere il DataCenter.**"
         location = str(e)
-    caption = """Extracted Userdata From Anubis' DATABASE
-·🆔: <code>{}</code>
-·**Profilo👤**: <a href='tg://user?id={}'>{}</a>
-**Bio⌨️**: {}
-·**Datacenter🖥️**: {}
-·*Numero di foto profilo📷**: {}
-·**Limitato⚡**: {}
-·**Verificato✔️**: {}
-·**Bot**: {}
-·**Gruppi in comune✉️**: {}
+    caption = """<b>Informazioni dell'utente estratte da<b> [𝙎𝙝𝙖𝙙𝙤𝙬](https://t.me/V_SHADOW_V)
+\n<b>•🆔:<b> <code>{}</code>
+<b>•Profilo👤:<b> <a href='tg://user?id={}'>{}</a>
+<b>•Bio⌨️:<b> {}
+<b>•Datacenter🖥️:<b> {}
+<b>•Numero di foto profilo📷:<b> {}
+<b>•Limitato⚡:<b> {}
+<b>•Verificato✔️:<b> {}
+<b>•Bot🤖:<b> {}
+<b>•Gruppi in comune✉️:<b> {}
 """.format(
         user_id,
         user_id,
