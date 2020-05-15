@@ -46,7 +46,7 @@ async def _(event):
     except Exception as e:
         dc_id = "**Serve una foto profilo per vedere il DataCenter.**"
         location = str(e)
-    caption = """<b>Informazioni dell'utente estratte da<b> [𝙎𝙝𝙖𝙙𝙤𝙬](https://t.me/V_SHADOW_V)
+    caption = """<b>Informazioni dell'utente estratte da<b> 𝙎𝙝𝙖𝙙𝙤𝙬
 \n<b>•🆔:<b> <code>{}</code>
 <b>•Profilo👤:<b> <a href='tg://user?id={}'>{}</a>
 <b>•Bio⌨️:<b> {}
