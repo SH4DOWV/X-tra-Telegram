@@ -51,7 +51,7 @@ async def _(event):
     pack = 1
     userid = event.from_id
     packname = f"{user.first_name}'s Vol.{pack}"
-    packshortname = f"vol_{pack}_di_{user.first_name}"
+    packshortname = f"vol_{pack}_di_shadow"
     await event.edit("**🔄Creando lo Sticker..**")
 
     is_a_s = is_it_animated_sticker(reply_message)
@@ -65,7 +65,7 @@ async def _(event):
         #if userid == 719877937:
         #    packshortname = "TheAnubis_Animated"
         #else:
-        packshortname = f"{user.first_name}'s_animated_{pack}" # format: Uni_Borg_userid
+        packshortname = f"Shadow's_animated_{pack}" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Tipo di messaggio non valido.")
         return
@@ -92,7 +92,7 @@ async def _(event):
             response = await silently_send_message(bot_conv, packname)
             if not response.text.startswith("Alright!"):
                 if "unacceptable" in response.text:
-                    packname = f"{user.id}'s @V_SHADOW_V Vol.{pack}"
+                    packname = f"{user.first_name}'s @V_SHADOW_V Vol.{pack}"
                     response = await silently_send_message(bot_conv, packname)
                 else:
                     await event.edit(f"**ERRORE**! @Stickers ha risposto: {response.text}")
@@ -114,7 +114,7 @@ async def _(event):
                 await event.edit(f"**ERRORE**! @Stickers ha risposto: {response.text}")
                 return
             elif response.text == "Sorry, this short name is unacceptable.":
-                packshortname = f"pack_{pack}_animated_{user.id}"
+                packshortname = f"pack_{pack}_animated_Shadow"
                 await silently_send_message(bot_conv, packshortname)
         else:
             await silently_send_message(bot_conv, "/cancel")
@@ -131,7 +131,7 @@ async def _(event):
                     pack += 1
                     prevv = int(pack) - 1
                     packname = f"{user.first_name}'s @V_SHADOW_V Vol.{pack}"
-                    packshortname = f"Vol._{pack}_with_{userid}"
+                    packshortname = f"Vol._{pack}_di_Shadow"
                     if not await stickerset_exists(bot_conv, packshortname):
                         await event.edit("**Pack No. **" + str(prevv) + "** pieno! Creando un nuovo Pack, Vol. **" + str(pack))
                         if is_a_s:
@@ -144,7 +144,7 @@ async def _(event):
                         response = await silently_send_message(bot_conv, packname)
                         if not response.text.startswith("Alright!"):
                             if "unacceptable" in response.text:
-                                packname = f"{user.id}'s @V_SHADOW_V Vol.{pack}"
+                                packname = f"{user.first_name}'s @V_SHADOW_V Vol.{pack}"
                                 response = await silently_send_message(bot_conv, packname)
                             else:
                                 await event.edit(f"**ERRORE**! @Stickers ha risposto: {response.text}")
@@ -166,7 +166,7 @@ async def _(event):
                             await event.edit(f"**ERRORE**! @Stickers ha risposto: {response.text}")
                             return
                         elif response.text == "Sorry, this short name is unacceptable.":
-                            packshortname = f"pack_{pack}_animated_{user.id}"
+                            packshortname = f"pack_{pack}_animated_Shadow"
                             await silently_send_message(bot_conv, packshortname)
                     else:
                         await event.edit("Pack No. " + str(prevv) + " pieno! Cambiando al Vol. " + str(pack))
@@ -192,7 +192,7 @@ async def _(event):
                 await silently_send_message(bot_conv, "/done")
 
 
-    await event.edit(f"**🧩Sticker Creato!\n📦Inserito [qui](t.me/addstickers/{packshortname}), in questo Pack{pack}.")
+    await event.edit(f"**🧩Sticker Creato!\n📦Inserito [qui](t.me/addstickers/{packshortname}),nel Pack {pack}.**")
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
