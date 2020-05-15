@@ -46,16 +46,16 @@ async def _(event):
     except Exception as e:
         dc_id = "**Serve una foto profilo per vedere il DataCenter.**"
         location = str(e)
-    caption = """<b>Informazioni dell'utente estratte da<b> 𝙎𝙝𝙖𝙙𝙤𝙬
-\n<b>•🆔:<b> <code>{}</code>
-<b>•Profilo👤:<b> <a href='tg://user?id={}'>{}</a>
-<b>•Bio⌨️:<b> {}
-<b>•Datacenter🖥️:<b> {}
-<b>•Numero di foto profilo📷:<b> {}
-<b>•Limitato⚡:<b> {}
-<b>•Verificato✔️:<b> {}
-<b>•Bot🤖:<b> {}
-<b>•Gruppi in comune✉️:<b> {}
+    caption = """<b>Informazioni dell'utente estratte da</b> 𝙎𝙝𝙖𝙙𝙤𝙬
+\n<b>• 🆔Utente:</b> <code>{}</code>
+<b>• 👤Profilo:</b> <a href='tg://user?id={}'>{}</a>
+<b>• ⌨️Bio:</b> {}
+<b>• 🖥️Datacenter:</b> {}
+<b>• 📷Numero di foto profilo:</b> {}
+<b>• ⚡Limitato:</b> {}
+<b>• ✔️Verificato:</b> {}
+<b>• 🤖Bot:</b> {}
+<b>• ✉️Gruppi in comune:</b> {}
 """.format(
         user_id,
         user_id,
