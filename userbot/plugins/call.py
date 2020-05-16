@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 3
+    animation_interval = 5
 
     animation_ttl = range(0, 18)
 
@@ -38,16 +38,16 @@ async def _(event):
 
         animation_chars = [
         
-            "Connettendomi ai ripetitori di Telegram...",
-            "Chiamata avviata.",
+            "**Connettendomi ai Server di Telegram...**",
+            "**Chiamata avviata.**",
             "Telegram: Ciao, questo è Telegram HQ. Chi è?",
-            "Me: Ciao, sono @V_SH4DOW_V , Per favore collegami al mio bro",
+            "Me: Ciao, sono @V_SHADOW_V , Per favore collegami al mio bro",
             "Utente Autorizzato.",
             "Chiamando lo sviluppatore di Telegram..",
             "Chiamata Privata avviata...",
             "Me: Hey, ciao, per favore banna sto account.",    
             "Sviluppatore: Posso sapere, chi sei?",
-            "Me: Sono @V_SH4DOW_V, ti ricordi? ",
+            "Me: Sono @V_SHADOW_V, ti ricordi? ",
             "Sviluppatore: O mio Dio, da quanto tempo, com'è...\nMi assicurerò personalmente che questo account venga bannanto entro 24h.",
             "Me: Grazie tante",
             "Sviluppatore: Non ringraziarmi, Telegram è nostro, chiamami quando sei libero.",
@@ -55,7 +55,7 @@ async def _(event):
             "Sviluppatore: Si, c'è un problema in Telegram v69.6.9.\nNon riesco a fixarlo. Mi serve aiuto.",
             "Me: Mandami l'app sul mio account Telegram, lo fixo e te lo mando.",
             "Sviluppatore: Sicuro, va bene \nCi vediamo, ciao :)",
-            "Chiamata Privata Disattivata."
+            "**Chiamata Privata Disattivata**."
         ]
 
         for i in animation_ttl:
