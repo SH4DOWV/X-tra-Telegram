@@ -18,7 +18,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© @V_SHADOW_V UserBot",
-                text="{}\n💻Plugin caricati: {}".format(
+                text="{}\n**💻Plugin caricati:** {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False
@@ -36,7 +36,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Fatti un UserBot tuo, o chiedi a @V_SHADOW_V!"
+            reply_pop_up_alert = "**Fatti un UserBot tuo, o chiedi a @V_SHADOW_V!**"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -55,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Fatti un UserBot tuo, o chiedi a @V_SHADOW_V!"
+            reply_pop_up_alert = "**Fatti un UserBot tuo, o chiedi a @V_SHADOW_V!**"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
@@ -70,7 +70,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except:
             pass
         if help_string is "":
-            reply_pop_up_alert = "{} è inutile".format(plugin_name)
+            reply_pop_up_alert = "{} **è inutile**".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n Usa .unload {} per rimuovere il plugin\n\
