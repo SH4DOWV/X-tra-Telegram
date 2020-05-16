@@ -18,7 +18,7 @@ from userbot.events import register
 
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
 async def info(event):
-    await event.edit("`Analizando il gruppo/canale...`")
+    await event.edit("**🔬Analizando il gruppo/canale...**")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
@@ -129,51 +129,51 @@ async def fetch_info(chat, event):
             bots += 1
 
     caption = "<b></b>\n"
-    caption += f"🆔: <code>{chat_obj_info.id}</code>\n"
+    caption += f"<b>🖊️Info della Chat</b>\n• 🆔: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"<b>📰Titolo del {chat_type} :<b> {chat_title}\n"
+        caption += f"<b>• 📰Titolo del {chat_type} :</b> {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
-        caption += f"<b>🥇1° Titolo:<b> {former_title}\n"
+        caption += f"<b>• 🥇Titolo Originario:</b> {former_title}\n"
     if username is not None:
-        caption += f"<b>🏷Tipo di {chat_type}:<b> Publico\n"
-        caption += f"<b>🖇Link:<b> {username}\n"
+        caption += f"<b>• 🏷Tipo di {chat_type}:</b> Publico\n"
+        caption += f"<b>• 🖇Link:<b> {username}\n"
     else:
-        caption += f"<b>🏷Tipo di {chat_type} :<b> Privato\n"
+        caption += f"<b>• 🏷Tipo di {chat_type} :</b> Privato\n"
     if creator_username is not None:
-        caption += f"<b>👑Creatore:<b> {creator_username}\n"
+        caption += f"<b>• 👑Creatore:</b> {creator_username}\n"
     elif creator_valid:
-        caption += f"<b>👑Creatore:<b> <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
+        caption += f"<b>• 👑Creatore:</b> <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
     if created is not None:
-        caption += f"<b>🕐Creato:<b> <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
+        caption += f"<b>• 🕐Creato:</b> <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
-        caption += f"<b>🕐Creato:<b> <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-    caption += f"<b>📡Data Center ID:<b> {dc_id}\n"
+        caption += f"<b>• 🕐Creato:</b> <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
+    caption += f"<b>• 📡Data Center ID:</b> {dc_id}\n"
     if exp_count is not None:
         chat_level = int((1+sqrt(1+7*exp_count/14))/2)
-        caption += f"<b>🏁Livello del {chat_type}:<b> <code>{chat_level}</code>\n"
+        caption += f"<b>• 🏁Livello del {chat_type}:</b> <code>{chat_level}</code>\n"
     if messages_viewable is not None:
-        caption += f"<b>✉️Messaggi Visibili:<b> <code>{messages_viewable}</code>\n"
+        caption += f"<b>• ✉️Messaggi Visibili:</b> <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"<b>📨Messaggi inviati:<b> <code>{messages_sent}</code>\n"
+        caption += f"<b>• 📨Messaggi inviati:</b> <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"<b>📨Messaggi Inviati:<b> <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"<b>• 📨Messaggi Inviati:</b> <code>{messages_sent_alt}</code> {warn_emoji}\n"
     if members is not None:
-        caption += f"<b>👥Membri:<b> <code>{members}</code>\n"
+        caption += f"<b>• 👥Membri:</b> <code>{members}</code>\n"
     if admins is not None:
-        caption += f"<b>⚜Amministratori:<b> <code>{admins}</code>\n"
+        caption += f"<b>• ⚜Amministratori:</b> <code>{admins}</code>\n"
     if bots_list:
-        caption += f"<b>🤖Bot<b>: <code>{bots}</code>\n"
+        caption += f"<b>• 🤖Bot</b>: <code>{bots}</code>\n"
     if members_online:
-        caption += f"<b>👥💡Membri Online al Momento:<b> <code>{members_online}</code>\n"
+        caption += f"<b>• 👥💡Membri Online al Momento:</b> <code>{members_online}</code>\n"
     if restrcited_users is not None:
-        caption += f"<b>👥🚨Utenti Limitati:<b> <code>{restrcited_users}</code>\n"
+        caption += f"<b>• 👥🚨Utenti Limitati:</b> <code>{restrcited_users}</code>\n"
     if banned_users is not None:
-        caption += f"<b>👥🚷Utenti Bannati:<b> <code>{banned_users}</code>\n"
+        caption += f"<b>• 👥🚷Utenti Bannati:</b> <code>{banned_users}</code>\n"
     if group_stickers is not None:
-        caption += f"<b>🎨Sticker del {chat_type}:<b> <a href=\"t.me/addstickers/{chat.full_chat.stickerset.short_name}\">{group_stickers}</a>\n"
+        caption += f"<b>• 🎨Sticker del {chat_type}:</b> <a href=\"t.me/addstickers/{chat.full_chat.stickerset.short_name}\">{group_stickers}</a>\n"
     caption += "\n"
     if not broadcast:
-        caption += f"<b>🐌Modalità Lenta:<b> {slowmode}"
+        caption += f"<b>• 🐌Modalità Lenta:</b> {slowmode}"
         if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled:
             caption += f", <code>{slowmode_time}s</code>\n\n"
         else:
