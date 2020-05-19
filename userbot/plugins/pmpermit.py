@@ -13,8 +13,8 @@ CACHE = {}
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No name set yet nibba, check pinned message in** @XtraTgBot"
-USER_BOT_WARN_ZERO = "**Stai scrivendo a** {DEFAULTUSER}, **senza permesso**, ciò ha attivato un **processo di sicurezza -_-**, **non scrivere più di 5 messaggi o verrai bloccato**.\n\n"
-USER_BOT_NO_WARN = ("[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id=742506768)\n\n"
+USER_BOT_WARN_ZERO = f"**Stai scrivendo a** {DEFAULTUSER}, **senza permesso**, ciò ha attivato un **processo di sicurezza**, **non scrivere più di 5 messaggi o verrai bloccato**.\n\n"
+USER_BOT_NO_WARN = ("[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id=309290540)\n\n"
                     "Ciao, questo è un **processo di sicurezza** contro rompicoglioni, se non sei uno di loro ti autorizzerò a scrivermi."
                     f"Questa è la **chat privata di** {DEFAULTUSER}.\n\n"
                     "Lascia il tuo nome, numero di telefono, qualche migliaio di € e forse ti risponderò entro quest'anno.\n\n")
@@ -84,9 +84,9 @@ if Var.PRIVATE_GROUP_ID is not None:
         if len(approved_users) > 0:
             for a_user in approved_users:
                 if a_user.reason:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={chat_id}) per {a_user.reason}."
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={chat_id}) per {a_user.reason}.\n"
                 else:
-                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={chat_id})"
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={chat_id})\n"
         else:
             APPROVED_PMs = "Nessuno autorizzato, per ora"
         if len(APPROVED_PMs) > 4095:
