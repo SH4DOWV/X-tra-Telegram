@@ -33,11 +33,11 @@ async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    await event.edit("ok, cercando la canzone")    
+    await event.edit("**📡Cercando la canzone..**")    
     bruh(str(cmd))
     l = glob.glob("*.mp3")
     loa = l[0]
-    await event.edit("inviando la canzone")
+    await event.edit("**⬇️Canzone trovata!⬇️**")
     await borg.send_file(
                 event.chat_id,
                 loa,
